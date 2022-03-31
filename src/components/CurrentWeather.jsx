@@ -4,7 +4,7 @@ import {Card} from 'react-bootstrap'
 import Sample from './Sample';
 function CurrentWeather({ data,Button }) {
   return (
-    <>
+    
     <StyledWeather>
       <header>
         <div className='current-weather box-shadow'>
@@ -28,7 +28,7 @@ function CurrentWeather({ data,Button }) {
       </header>
      
     </StyledWeather>
-    </>
+    
   );
 }
 

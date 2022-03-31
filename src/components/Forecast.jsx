@@ -10,7 +10,7 @@ function Forecast({ data }) {
       <h2>Current Weather</h2>
       <div className='box-shadow current-forecast'>
         {currentWeather.map((weather) => (
-          <div className='card box-shadow' key={weather.time_epoch}>
+          <div className='card2 box-shadow' key={weather.time_epoch}>
             <span>{moment(weather.time).format('h:mm:ss a')}</span>
             <img src={weather.condition.icon} alt='weather icon' />
             <p>{weather.temp_c} °C</p>
@@ -25,7 +25,7 @@ function Forecast({ data }) {
           className='box-shadow current-forecast future-forecast'
         >
           {futureWeather.hour.map((weather) => (
-            <div className='card box-shadow' key={weather.time_epoch}>
+            <div className='card2 box-shadow' key={weather.time_epoch}>
               <span>{moment(weather.time).format('h:mm:ss a')}</span>
               <img src={weather.condition.icon} alt='weather icon' />
               <p>{weather.temp_c} °C</p>
@@ -47,7 +47,7 @@ const StyledForecast = styled.div`
     display: flex;
     overflow-y: hidden;
 
-    .card {
+    .card2 {
       padding: 10px;
       margin-right: 20px;
       display: flex;
