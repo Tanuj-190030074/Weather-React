@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {Card} from 'react-bootstrap'
 
 function CurrentWeather({ data,Button }) {
+  console.log(data)
   const lu=data.current.last_updated
   const dess=lu.slice(10)
   return (
@@ -10,6 +11,7 @@ function CurrentWeather({ data,Button }) {
     <div className="card" style={{color: '#4B515D', borderRadius: '35px',width:"50%",marginLeft:"140px"}}>
               <div className="card-body p-4">
                 <div className="d-flex">
+                <h6 className="flex-grow-1">{data.location.country}</h6>
                   <h6 className="flex-grow-1">{data.location.name}</h6>
                   <h6>{dess}</h6>
                 </div>
