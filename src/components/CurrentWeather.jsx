@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {Card} from 'react-bootstrap'
 
 function CurrentWeather({ data,Button }) {
-  console.log(data)
   const lu=data.current.last_updated
   const dess=lu.slice(10)
   return (
