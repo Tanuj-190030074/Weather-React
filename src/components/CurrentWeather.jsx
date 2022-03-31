@@ -1,33 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Card} from 'react-bootstrap'
-import Sample from './Sample';
+
 function CurrentWeather({ data,Button }) {
+  console.log(data)
+  const lu=data.current.last_updated
+  const dess=lu.slice(10)
   return (
     
-    <StyledWeather>
-      <header>
-        <div className='current-weather box-shadow'>
-          <img
-            src={data.current.condition.icon}
-            alt={data.current.condition.text}
-          />
-
-          <h1>{data.current.temp_c}°C</h1>
-
-          <div className='content'>
-            <h5>Precipitation: {data.current.precip_in}</h5>
-            <h5>Wind: {data.current.wind_kph} km/h</h5>
-          </div>
-        </div>
-        <div className='location box-shadow'>
-          <h2>{data.location.region}</h2>
-          <h3>{data.location.country}</h3>
-          <h4>{data.location.name}</h4>
-        </div>
-      </header>
-     
-    </StyledWeather>
+    <div className="card" style={{color: '#4B515D', borderRadius: '35px',width:"50%",marginLeft:"140px"}}>
+              <div className="card-body p-4">
+                <div className="d-flex">
+                  <h6 className="flex-grow-1">{data.location.name}</h6>
+                  <h6>{dess}</h6>
+                </div>
+                <div className="d-flex flex-column text-center mt-5 mb-4">
+                  <h6 className="display-4 mb-0 font-weight-bold" style={{color: '#1C2331'}}>{data.current.temp_c}°C </h6>
+                  <span className="small" style={{color: '#868B94'}}>{data.current.condition.text}</span>
+                </div>
+                <div className="d-flex align-items-center">
+                  <div className="flex-grow-1" style={{fontSize: '1rem'}}>
+                    <div><i className="fas fa-wind fa-fw" style={{color: '#868B94'}} /> <span className="ms-1"> {data.current.wind_kph} km/h </span></div>
+                    <div><i className="fas fa-tint fa-fw" style={{color: '#868B94'}} /> <span className="ms-1"> {data.current.humidity}% </span></div>
+                    <div><i className="fas fa-cloud-rain fa-fw" style={{color: '#868B94'}} /> <span className="ms-1">  {data.current.precip_in} </span></div>
+                  </div>
+                  <div>
+                    <img src={data.current.condition.icon}
+                       alt={data.current.condition.text} width="100px" />
+                  </div>
+                </div>
+              </div>
+            </div>
+  
     
   );
 }

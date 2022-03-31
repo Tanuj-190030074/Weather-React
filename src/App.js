@@ -6,7 +6,7 @@ import {Card,Button} from 'react-bootstrap';
 // React toastify
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Sample from './components/Sample';
+
 
 // Components
 import CurrentWeather from './components/CurrentWeather';
