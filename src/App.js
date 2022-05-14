@@ -15,7 +15,7 @@ import Search from './components/Search';
 
 function App() {
   const [searchResult, setSearchResult] = useState('India');
-  const url = `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_KEY}&q=${searchResult}&days=10&aqi=yes&alerts=no`;
+  const url = `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_KEY}&q=${searchResult}&days=10&aqi=yes&alerts=yes`;
   const {data}=useRequest(url)
   return (
     <div>
